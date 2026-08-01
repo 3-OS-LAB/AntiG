@@ -1,0 +1,9 @@
+{
+  "name": "BloodConnect",
+  "short_name": "BloodConnect",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fffafb",
+  "theme_color": "#d92d39",
+  "description": "A premium donation and health companion."
+}
