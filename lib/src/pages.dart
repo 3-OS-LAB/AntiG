@@ -19,7 +19,7 @@ class BrandMark extends StatelessWidget {
 
   final bool small;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     final size = small ? 42.0 : 76.0;
     return Container(
@@ -42,7 +42,7 @@ class PrimaryButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final IconData? icon;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 56,
@@ -69,7 +69,7 @@ class Panel extends StatelessWidget {
   final Color? color;
   final EdgeInsets padding;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Card(color: color, child: Padding(padding: padding, child: child));
   }
@@ -82,7 +82,7 @@ class _Frame extends StatelessWidget {
   final Widget child;
   final List<Widget>? actions;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(title), actions: actions),
@@ -105,7 +105,7 @@ class _Frame extends StatelessWidget {
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
-  $override
+  @override
   Widget build(BuildContext context) {
     final app = AppScope.of(context);
     return Scaffold(
@@ -189,7 +189,7 @@ class OnboardingScreen extends StatelessWidget {
     (Icons.monitor_heart_rounded, medicalBlue, 'YOUR HEALTH, CLEARLY', 'Your reports,\nmade easier to read.', 'Keep reports organised and understand trends with clear, non-diagnostic summaries.'),
   ];
 
-  $override
+  @override
   Widget build(BuildContext context) {
     final app = AppScope.of(context);
     final slide = slides[app.onboardingPage];
@@ -252,7 +252,7 @@ class OnboardingScreen extends StatelessWidget {
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return _AuthFrame(
       eyebrow: 'WELCOME BACK',
@@ -296,7 +296,7 @@ class LoginScreen extends StatelessWidget {
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return _AuthFrame(
       eyebrow: 'JOIN THE COMMUNITY',
@@ -322,7 +322,7 @@ class SignupScreen extends StatelessWidget {
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return _AuthFrame(
       eyebrow: 'ACCOUNT RECOVERY',
@@ -354,7 +354,7 @@ class _AuthFrame extends StatelessWidget {
   final String subtitle;
   final Widget child;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -395,7 +395,7 @@ class _DividerLabel extends StatelessWidget {
 
   final String label;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Row(
       children: [
@@ -410,7 +410,7 @@ class _DividerLabel extends StatelessWidget {
 class OtpScreen extends StatelessWidget {
   const OtpScreen({super.key});
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return _AuthFrame(
       eyebrow: 'ONE MORE STEP',
@@ -441,7 +441,7 @@ class OtpScreen extends StatelessWidget {
 class RoleScreen extends StatefulWidget {
   const RoleScreen({super.key});
 
-  $override
+  @override
   State<RoleScreen> createState() => _RoleScreenState();
 }
 
@@ -453,7 +453,7 @@ class _RoleScreenState extends State<RoleScreen> {
     (Icons.business_rounded, 'Organisation', 'Represent a hospital, blood bank or community organisation.'),
   ];
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return _AuthFrame(
       eyebrow: 'PERSONALISE YOUR EXPERIENCE',
@@ -500,7 +500,7 @@ class _RoleScreenState extends State<RoleScreen> {
 class BiometricScreen extends StatelessWidget {
   const BiometricScreen({super.key});
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return _AuthFrame(
       eyebrow: 'QUICK AND PRIVATE',
@@ -522,14 +522,14 @@ class BiometricScreen extends StatelessWidget {
 class HomeShell extends StatefulWidget {
   const HomeShell({super.key});
 
-  $override
+  @override
   State<HomeShell> createState() => _HomeShellState();
 }
 
 class _HomeShellState extends State<HomeShell> {
   int index = 0;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     const pages = [DashboardScreen(), DiscoverScreen(), EmergencyScreen(), ReportsScreen(), ProfileScreen()];
     return Scaffold(
@@ -554,7 +554,7 @@ class _HomeScroll extends StatelessWidget {
 
   final Widget child;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Center(
       child: ConstrainedBox(
@@ -568,7 +568,7 @@ class _HomeScroll extends StatelessWidget {
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
-  $override
+  @override
   Widget build(BuildContext context) {
     final app = AppScope.of(context);
     return _HomeScroll(
@@ -618,7 +618,7 @@ class _DonationHero extends StatelessWidget {
   final bool eligible;
   final bool booked;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     final title = booked ? 'Appointment confirmed' : eligible ? 'Ready to book' : 'Check your eligibility';
     final helper = booked ? 'Saturday, 10:30 AM · City Care Centre' : eligible ? 'You’re all set for your next donation.' : 'Answer three quick questions to get started.';
@@ -647,7 +647,7 @@ class _SectionHeader extends StatelessWidget {
   final String? action;
   final VoidCallback? onTap;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Row(
       children: [
@@ -666,7 +666,7 @@ class _QuickAction extends StatelessWidget {
   final Color color;
   final VoidCallback onTap;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
@@ -687,7 +687,7 @@ class _MetricCard extends StatelessWidget {
   final String label;
   final IconData icon;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Panel(
       padding: const EdgeInsets.all(18),
@@ -699,7 +699,7 @@ class _MetricCard extends StatelessWidget {
 class _CampCard extends StatelessWidget {
   const _CampCard();
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Panel(
       child: Row(children: [Container(height: 54, width: 54, decoration: BoxDecoration(color: medicalBlue.withOpacity(.12), borderRadius: BorderRadius.circular(18)), child: const Icon(Icons.location_city_rounded, color: medicalBlue)), const SizedBox(width: 15), const Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text('City Care Blood Drive', style: TextStyle(fontWeight: FontWeight.w900)), SizedBox(height: 4), Text('1.2 km · Sat, 10 Aug · 9 AM–4 PM')])), const Icon(Icons.chevron_right_rounded)]),
@@ -710,7 +710,7 @@ class _CampCard extends StatelessWidget {
 class DiscoverScreen extends StatelessWidget {
   const DiscoverScreen({super.key});
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return _HomeScroll(
       child: Column(
@@ -735,7 +735,7 @@ class DiscoverScreen extends StatelessWidget {
 class EmergencyScreen extends StatelessWidget {
   const EmergencyScreen({super.key});
 
-  $override
+  @override
   Widget build(BuildContext context) {
     final app = AppScope.of(context);
     return _HomeScroll(
@@ -773,7 +773,7 @@ class EmergencyScreen extends StatelessWidget {
 class ReportsScreen extends StatelessWidget {
   const ReportsScreen({super.key});
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return _HomeScroll(
       child: Column(
@@ -809,7 +809,7 @@ class ReportsScreen extends StatelessWidget {
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return _HomeScroll(
       child: Column(
@@ -840,7 +840,7 @@ class _ExploreTile extends StatelessWidget {
   final String subtitle;
   final VoidCallback onTap;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
@@ -871,7 +871,7 @@ class _ReportTile extends StatelessWidget {
   final Color color;
   final VoidCallback onTap;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
@@ -892,7 +892,7 @@ class _StatusPill extends StatelessWidget {
   final String label;
   final Color color;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 6),
@@ -925,7 +925,7 @@ class FeatureScreen extends StatefulWidget {
 
   final Feature feature;
 
-  $override
+  @override
   State<FeatureScreen> createState() => _FeatureScreenState();
 }
 
@@ -953,7 +953,7 @@ class _FeatureScreenState extends State<FeatureScreen> {
         Feature.settings => 'Settings & privacy',
       };
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return _Frame(
       title: title,
@@ -1307,7 +1307,7 @@ class _HistoryItem extends StatelessWidget {
   final String place;
   final String type;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding:const EdgeInsets.only(bottom:12),
@@ -1323,7 +1323,7 @@ class _Badge extends StatelessWidget {
   final String title;
   final Color color;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Panel(padding:const EdgeInsets.symmetric(vertical:18, horizontal:10), child:Column(children:[Icon(icon, color:color, size:28), const SizedBox(height:8), Text(title, textAlign:TextAlign.center, style:const TextStyle(fontWeight:FontWeight.w800, fontSize:12))]));
   }
@@ -1337,7 +1337,7 @@ class _AvailabilityCard extends StatelessWidget {
   final String status;
   final Color color;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Panel(child:Row(children:[Container(height:48, width:48, decoration:BoxDecoration(color:color.withOpacity(.1), borderRadius:BorderRadius.circular(15)), child:Icon(Icons.local_hospital_outlined, color:color)), const SizedBox(width:14), Expanded(child:Column(crossAxisAlignment:CrossAxisAlignment.start, children:[Text(name, style:const TextStyle(fontWeight:FontWeight.w900)), const SizedBox(height:4), Text(distance, style:Theme.of(context).textTheme.bodySmall)])), _StatusPill(label:status, color:color)]));
   }
@@ -1353,7 +1353,7 @@ class _MapPin extends StatelessWidget {
   final Color color;
   final String label;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Positioned(top:top, right:right, bottom:bottom, left:left, child:Column(mainAxisSize:MainAxisSize.min, children:[Icon(Icons.location_on_rounded, color:color, size:34), Text(label, style:TextStyle(fontSize:10, fontWeight:FontWeight.w700, color:color))]));
   }
@@ -1367,7 +1367,7 @@ class _ValueRow extends StatelessWidget {
   final String range;
   final Color color;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding:const EdgeInsets.only(bottom:10),
@@ -1385,7 +1385,7 @@ class _NotificationItem extends StatelessWidget {
   final String body;
   final String time;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding:const EdgeInsets.only(bottom:12),
@@ -1401,7 +1401,7 @@ class _CertificateCard extends StatelessWidget {
   final String date;
   final Color accent;
 
-  $override
+  @override
   Widget build(BuildContext context) {
     return Container(
       padding:const EdgeInsets.all(22),
@@ -1417,7 +1417,7 @@ class _TrendPainter extends CustomPainter {
   final Color lineColor;
   final Color gridColor;
 
-  $override
+  @override
   void paint(Canvas canvas, Size size) {
     final grid = Paint()..color = gridColor..strokeWidth = 1;
     for (var index = 1; index < 4; index++) {
@@ -1433,6 +1433,6 @@ class _TrendPainter extends CustomPainter {
     canvas.drawCircle(Offset(size.width - 24, size.height - 135), 6, Paint()..color = lineColor);
   }
 
-  $override
+  @override
   bool shouldRepaint(covariant _TrendPainter oldDelegate) => oldDelegate.lineColor != lineColor || oldDelegate.gridColor != gridColor;
 }
